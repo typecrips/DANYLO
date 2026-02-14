@@ -1,17 +1,21 @@
+// Avatar: blurred -> clear on click
 (() => {
-  const img = document.getElementById('avatarImg');
-  const btn = document.getElementById('avatarReveal');
+  const card = document.getElementById('avatar-card');
+  const clear = document.getElementById('avatar-clear');
+  const overlay = document.getElementById('avatar-overlay');
 
-  if (!img || !btn) return;
+  if (!card || !clear || !overlay) return;
 
   const reveal = () => {
-    img.classList.remove('is-blurred');
-    btn.style.display = 'none';
+    clear.style.opacity = '1';
+    overlay.style.display = 'none';
   };
 
-  btn.addEventListener('click', reveal);
-  // Also reveal by clicking the image (after overlay is gone, this does nothing)
-  img.addEventListener('click', () => {
-    if (img.classList.contains('is-blurred')) reveal();
+  card.addEventListener('click', reveal);
+  card.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      reveal();
+    }
   });
 })();

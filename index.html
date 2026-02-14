@@ -1,164 +1,181 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Danylo — Portfolio</title>
-  <meta name="description" content="Designer and creative artist based in Berlin, Germany." />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
-</head>
-<body>
-  <div class="bg" aria-hidden="true"></div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DANYLO — Portfolio</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
 
-  <main class="wrap">
+  <body>
+    <div class="bg">
+      <img class="bg__img bg__img--1" src="assets/img/bg1.png" alt="" />
+      <img class="bg__img bg__img--2" src="assets/img/bg2.png" alt="" />
+    </div>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div class="hero-card">
-        <div class="avatar" id="avatarCard">
-          <img src="assets/img/avatar.png" alt="Portrait" class="avatar-img is-blurred" id="avatarImg" />
-          <button class="avatar-overlay" id="avatarReveal" type="button" aria-label="Reveal photo">
-            <div class="overlay-title">Sensitive content</div>
-            <div class="overlay-sub">See photo</div>
-          </button>
+    <main class="wrap">
+      <!-- TOP / HERO -->
+      <section class="hero glass">
+        <div class="hero__avatar" id="avatar-card" role="button" aria-label="Reveal photo">
+          <img class="hero__avatar-img" id="avatar" src="assets/img/avatar.png" alt="Avatar" />
+          <img class="hero__avatar-img hero__avatar-img--clear" id="avatar-clear" src="assets/img/avatar2.png" alt="Avatar" />
+          <div class="hero__avatar-overlay" id="avatar-overlay">
+            <div class="hero__avatar-eye">🙈</div>
+            <div class="hero__avatar-title">Sensitive content</div>
+            <div class="hero__avatar-cta">See photo</div>
+          </div>
         </div>
 
-        <div class="hero-info">
-          <div class="hero-top">
-            <div class="name">
-              <div class="name-row">
-                <h1>Danylo</h1>
-                <span class="status"><img src="assets/img/online.png" alt="Online" /> online</span>
+        <div class="hero__content">
+          <div class="hero__top">
+            <div>
+              <div class="hero__name">
+                Danylo
+                <span class="status"><span class="status__dot"></span>online</span>
               </div>
-              <p class="muted">Designer & creative artist<br/>based in Berlin, Germany</p>
+              <div class="hero__sub">Graphic designer &amp; creative artist based in Berlin</div>
+              <div class="hero__sub hero__sub--muted">
+                Working in graphic design since 2019. Founder of EMFINUM. Focused on branding, fashion, photography, and web.
+              </div>
             </div>
 
-            <a class="btn-contact" href="mailto:typecrips@gmail.com">
-              <img src="assets/img/contact.png" alt="" />
-              Contact
-            </a>
+            <a class="btn" href="mailto:typecrips@gmail.com">Contact</a>
           </div>
 
           <div class="skills">
-            <div class="skill"><span>Design</span><span class="muted">Logos, merch, posters</span></div>
-            <div class="skill"><span>Web</span><span class="muted">Landing pages, UI</span></div>
-            <div class="skill"><span>Brand</span><span class="muted">Direction & visuals</span></div>
+            <div class="skills__title">Skills</div>
+            <div class="skills__list">
+              <div class="skill">
+                <div class="skill__name">Design</div>
+                <div class="skill__desc">graphic, clothing, AI, media</div>
+              </div>
+              <div class="skill">
+                <div class="skill__name">Production management</div>
+                <div class="skill__desc">clothing, polygraphy, jewelry</div>
+              </div>
+              <div class="skill">
+                <div class="skill__name">Photography</div>
+                <div class="skill__desc">brand shoot, retouch, product/catalogue</div>
+              </div>
+              <div class="skill">
+                <div class="skill__name">Web</div>
+                <div class="skill__desc">developing Shopify store</div>
+              </div>
+            </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      <div class="section-divider"></div>
+      <div class="divider"></div>
 
-      <div class="brand-block">
-        <h2 class="brand-title">EMFINUM</h2>
-        <p class="muted">Founded in 2023. I lead creative direction: drops, communication, garment design.</p>
-      </div>
-    </section>
+      <!-- EMFINUM -->
+      <section class="row">
+        <div class="brand-card">
+          <div class="brand-card__icon">
+            <img src="assets/img/emfinum.png" alt="EMFINUM" />
+          </div>
+          <div class="brand-card__text">
+            <div class="h">EMFINUM</div>
+            <p>
+              Founded EMFINUM clothing brand in 2023 in Kyiv, Ukraine.<br />
+              As the brand’s creative director and main driving force, i shape concepts, curate drops, design garments, and define the visual and communicational direction of the brand.
+            </p>
+          </div>
+        </div>
+      </section>
 
-    <!-- DESIGN -->
-    <section class="section" id="design">
-      <div class="section-header">
-        <h2>DESIGN</h2>
-        <p class="muted">
-          Working as a graphic designer since 2019. Main areas: logos, clothing prints, posters.
-          Collaborations include MISBHV, DOOM3K, Era Worldwide Club, Volchok.
+      <!-- DESIGN -->
+      <section class="section">
+        <div class="section-title"><span>DESIGN</span></div>
+        <p class="lead">
+          Working in graphic design since 2019, with a focus on logos, print graphics, and posters.<br />
+          Previously worked with MISBHV, DOOM3K, Era Worldwide Club, Volchok, Smuta.
         </p>
-      </div>
 
-      <div class="grid grid-3">
-        <img class="tile" src="assets/img/design-heart.png" alt="Design work" />
-        <img class="tile" src="assets/img/design-sanctuary.png" alt="Design work" />
-        <img class="tile" src="assets/img/emfinum.png" alt="EMFINUM" />
-        <img class="tile" src="assets/img/design-qurqur.png" alt="Design work" />
-        <img class="tile" src="assets/img/design-skull.png" alt="Design work" />
-        <img class="tile" src="assets/img/design-doom3k.png" alt="Design work" />
-      </div>
-    </section>
+        <div class="grid grid--design">
+          <img src="assets/img/design-heart.png" alt="Design work" />
+          <img src="assets/img/design-qurqur.png" alt="Design work" />
+          <img src="assets/img/design-fs.png" alt="Design work" />
+          <img src="assets/img/design-skull.png" alt="Design work" />
+          <img src="assets/img/design-death.png" alt="Design work" />
+          <img src="assets/img/design-sanctuary.png" alt="Sanctuary" class="design-word" />
+        </div>
 
-    <!-- SANCTUARY / CLOTHES -->
-    <section class="section" id="sanctuary">
-      <div class="section-header">
-        <h2>SANCTUARY</h2>
-        <p class="muted">Clothes / metal details / hardware experiments.</p>
-      </div>
+        <div class="subline">Clothing &amp; Jewelry design (+ product photo)</div>
+        <div class="tiles">
+          <div class="tile"><img src="assets/img/clothes-hair-tool.png" alt="" /></div>
+          <div class="tile"><img src="assets/img/clothes-necklace.png" alt="" /></div>
+          <div class="tile"><img src="assets/img/clothes-ring.png" alt="" /></div>
+          <div class="tile"><img src="assets/img/clothes-armor-zip.png" alt="" /></div>
+          <div class="tile"><img src="assets/img/clothes-flux-chain.png" alt="" /></div>
+        </div>
 
-      <div class="grid grid-5">
-        <img class="tile" src="assets/img/clothes-bracelet.png" alt="Bracelet" />
-        <img class="tile" src="assets/img/clothes-ring.png" alt="Ring" />
-        <img class="tile" src="assets/img/clothes-necklace.png" alt="Necklace" />
-        <img class="tile" src="assets/img/clothes-flux-chain.png" alt="Chain" />
-        <img class="tile" src="assets/img/clothes-hair-tool.png" alt="Hair tool" />
+        <div class="fonts">
+          <div class="fonts__label">Fonts</div>
+          <div class="grid grid--fonts">
+            <div class="card"><img src="assets/img/fonts-system.png" alt="SYSTEM" /></div>
+            <div class="card"><img src="assets/img/fonts-exphany.png" alt="EXPHANY" /></div>
+            <div class="card"><img src="assets/img/fonts-menovy.png" alt="MENOVY" /></div>
+            <div class="card"><img src="assets/img/fonts-furtumn.png" alt="FURTUMN" /></div>
+          </div>
+          <a class="link" href="#" aria-label="Look & buy fonts">Look &amp; buy fonts</a>
+        </div>
+      </section>
 
-        <img class="tile" src="assets/img/clothes-armor-zip.png" alt="Armor zip" />
-        <img class="tile" src="assets/img/clothes-raw-zip.png" alt="Raw zip" />
-        <img class="tile" src="assets/img/clothes-turtleneck.png" alt="Turtleneck" />
-        <img class="tile" src="assets/img/clothes-waxed-jeans.png" alt="Waxed jeans" />
-        <img class="tile" src="assets/img/clothes-flared-jeans.png" alt="Flared jeans" />
-      </div>
-    </section>
+      <!-- PHOTO -->
+      <section class="section">
+        <div class="section-title"><span>PHOTOGRAPHY &amp; VIDEO</span></div>
 
-    <!-- FONTS -->
-    <section class="section" id="fonts">
-      <div class="section-header">
-        <h2>FONTS</h2>
-        <p class="muted">Type explorations & display fonts.</p>
-      </div>
+        <div class="photo-frame">
+          <div class="filmstrip">
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+            <div class="filmstrip__slot"></div>
+          </div>
+          <div class="photo-frame__main"></div>
+        </div>
+      </section>
 
-      <div class="grid grid-2">
-        <img class="tile" src="assets/img/fonts-exphany.png" alt="Exphany" />
-        <img class="tile" src="assets/img/fonts-furtumn.png" alt="Furtumn" />
-        <img class="tile" src="assets/img/fonts-menovy.png" alt="Menovy" />
-        <img class="tile" src="assets/img/fonts-system.png" alt="System" />
-      </div>
+      <!-- WEB -->
+      <section class="section">
+        <div class="section-title"><span>WEB</span></div>
 
-      <a class="link" href="#" onclick="return false">Look &amp; buy fonts</a>
-    </section>
+        <div class="pills">
+          <a class="pill" href="https://emfinum.com" target="_blank" rel="noreferrer">
+            <span class="pill__icon">◎</span>
+            <span class="pill__text">
+              <span class="pill__title">emfinum.com</span>
+              <span class="pill__desc">Full-cycle website development — from concept and visual design to payment system integration, logistics automation, and streamlined customer request handling.</span>
+            </span>
+          </a>
 
-    <!-- PHOTOGRAPHY -->
-    <section class="section" id="photo">
-      <div class="section-header">
-        <h2>PHOTOGRAPHY</h2>
-        <p class="muted">Selection of photography for EMFINUM.</p>
-      </div>
+          <a class="pill" href="https://madeinroutine.com" target="_blank" rel="noreferrer">
+            <span class="pill__icon">✶</span>
+            <span class="pill__text">
+              <span class="pill__title">madeinroutine.com</span>
+              <span class="pill__desc">Product setup and organization — including product listings, photography and descriptions. Logistics automation with shipping service integration.</span>
+            </span>
+          </a>
+        </div>
 
-      <div class="photo-placeholder">
-        <div class="muted">(Add your photo selection image here when ready)</div>
-      </div>
-    </section>
+        <footer class="footer">
+          <div class="footer__links">
+            <a href="#">Instagram</a>
+            <a href="#">Behance</a>
+            <a href="mailto:typecrips@gmail.com">E-Mail</a>
+          </div>
+          <div class="footer__meta">
+            <span>© 2026</span>
+            <span>designed &amp; developed by me</span>
+          </div>
+        </footer>
+      </section>
+    </main>
 
-    <!-- WEB -->
-    <section class="section" id="web">
-      <div class="section-header">
-        <h2>WEB</h2>
-        <p class="muted">Landing pages and websites.</p>
-      </div>
-
-      <div class="web-list">
-        <a class="web-item" href="https://emfinum.com" target="_blank" rel="noreferrer">
-          <div class="pill">emfinum.com</div>
-          <div class="muted">Clothing brand website</div>
-        </a>
-        <a class="web-item" href="https://madeinroutine.com" target="_blank" rel="noreferrer">
-          <div class="pill">madeinroutine.com</div>
-          <div class="muted">Website / store concept</div>
-        </a>
-      </div>
-    </section>
-
-    <footer class="footer">
-      <div class="footer-links">
-        <a href="https://instagram.com" target="_blank" rel="noreferrer">Instagram</a>
-        <a href="https://behance.net" target="_blank" rel="noreferrer">Behance</a>
-        <a href="mailto:typecrips@gmail.com">E-Mail</a>
-      </div>
-      <div class="muted">© 2026 — designed &amp; developed by me</div>
-    </footer>
-
-  </main>
-
-  <script src="script.js"></script>
-</body>
+    <script src="script.js"></script>
+  </body>
 </html>
