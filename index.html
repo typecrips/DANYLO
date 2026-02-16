@@ -276,14 +276,14 @@
                 mainPhoto.src = newSrc;
                 // Плавное появление после смены картинки
                 mainPhoto.style.opacity = '1';
-            }, 200); // 200 миллисекунд (совпадает с duration-200 в классах Tailwind)
+            }, 200);
         }
 
         // Функционал Лайтбокса (Увеличение изображений)
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         
-        // Используем делегирование событий для обработки динамических картинок (включая галерею)
+        // Используем делегирование событий для обработки динамических картинок
         document.body.addEventListener('click', (e) => {
             if (e.target.classList.contains('zoomable-image')) {
                 e.stopPropagation();
@@ -310,6 +310,16 @@
                 lightbox.classList.remove('flex');
                 document.body.style.overflow = 'auto';
             }, 300);
+        });
+
+        // ЗАЩИТА КОНТЕНТА: Отключение правого клика (контекстного меню)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // ЗАЩИТА КОНТЕНТА: Отключение перетаскивания картинок
+        document.addEventListener('dragstart', event => {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault();
+            }
         });
     </script>
 
