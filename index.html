@@ -179,19 +179,34 @@
             </a>
         </div>
 
-        <div class="section-divider">PHOTOGRAPHY & VIDEO</div>
+        <div class="section-divider">PHOTOGRAPHY</div>
         <div class="flex flex-row gap-2 h-[350px] md:h-[450px]">
-            <div class="flex flex-col gap-2 w-10 md:w-16 shrink-0">
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
-                <div class="bg-white/5 flex-1 rounded-sm border border-white/10"></div>
+            
+            <div class="flex flex-col gap-2 w-12 md:w-20 shrink-0">
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_1.jpg')">
+                    <img src="assets/photo_1.jpg" alt="Thumb 1" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_2.jpg')">
+                    <img src="assets/photo_2.jpg" alt="Thumb 2" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_3.jpg')">
+                    <img src="assets/photo_3.jpg" alt="Thumb 3" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_4.jpg')">
+                    <img src="assets/photo_4.jpg" alt="Thumb 4" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_5.jpg')">
+                    <img src="assets/photo_5.jpg" alt="Thumb 5" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_6.jpg')">
+                    <img src="assets/photo_6.jpg" alt="Thumb 6" class="w-full h-full object-cover">
+                </div>
             </div>
-            <div class="flex-1 bg-gradient-to-b from-white/5 to-white/10 border border-white/10 rounded-sm flex items-center justify-center text-gray-500 text-sm">
-                Waiting for main photo...
+            
+            <div class="flex-1 rounded-sm border border-white/10 overflow-hidden bg-[#0a0a0a]">
+                <img id="main-photo" src="assets/photo_1.jpg" alt="Main Photography" class="zoomable-image w-full h-full object-contain cursor-pointer transition-opacity duration-200">
             </div>
+
         </div>
 
         <div class="section-divider">WEB</div>
@@ -250,28 +265,39 @@
             }
         }
 
+        // Функция переключения главного фото в галерее
+        function changeMainPhoto(newSrc) {
+            const mainPhoto = document.getElementById('main-photo');
+            
+            // Плавное затухание
+            mainPhoto.style.opacity = '0';
+            
+            setTimeout(() => {
+                mainPhoto.src = newSrc;
+                // Плавное появление после смены картинки
+                mainPhoto.style.opacity = '1';
+            }, 200); // 200 миллисекунд (совпадает с duration-200 в классах Tailwind)
+        }
+
         // Функционал Лайтбокса (Увеличение изображений)
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
-        const zoomableImages = document.querySelectorAll('.zoomable-image');
-
-        // Открытие лайтбокса при клике на картинку
-        zoomableImages.forEach(img => {
-            img.addEventListener('click', (e) => {
-                e.stopPropagation(); // Чтобы клик не передавался дальше
-                lightboxImg.src = img.src;
+        
+        // Используем делегирование событий для обработки динамических картинок (включая галерею)
+        document.body.addEventListener('click', (e) => {
+            if (e.target.classList.contains('zoomable-image')) {
+                e.stopPropagation();
+                lightboxImg.src = e.target.src;
                 
-                // Делаем контейнер видимым и добавляем flex для центрирования
                 lightbox.classList.remove('hidden');
                 lightbox.classList.add('flex');
                 
-                // Небольшая задержка для плавной анимации появления
                 setTimeout(() => {
                     lightbox.classList.remove('opacity-0');
                     lightboxImg.classList.remove('scale-95');
                 }, 10);
-                document.body.style.overflow = 'hidden'; // Блокируем скролл страницы
-            });
+                document.body.style.overflow = 'hidden';
+            }
         });
 
         // Закрытие лайтбокса при клике на фон
@@ -279,11 +305,10 @@
             lightbox.classList.add('opacity-0');
             lightboxImg.classList.add('scale-95');
             
-            // Ждем окончания анимации перед скрытием
             setTimeout(() => {
                 lightbox.classList.add('hidden');
-                lightbox.classList.remove('flex'); // Убираем flex
-                document.body.style.overflow = 'auto'; // Разблокируем скролл
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = 'auto';
             }, 300);
         });
     </script>
