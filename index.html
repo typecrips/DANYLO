@@ -145,14 +145,14 @@
             <img src="assets/design_fs.png" alt="FS Logo" class="zoomable-image w-full aspect-square object-contain mix-blend-screen cursor-pointer">
         </div>
 
-        <div class="flex h-24 md:h-56 items-center gap-2 md:gap-8 mb-6 md:mb-10">
-            <img src="assets/design_death.png" alt="Skulls Logo" class="zoomable-image h-full w-auto shrink-0 object-cover mix-blend-screen cursor-pointer">
+        <div class="flex justify-center items-center gap-4 md:gap-8 mb-6 md:mb-10">
+            <img src="assets/design_death.png" alt="Skulls Logo" class="zoomable-image w-[32%] shrink-0 aspect-square object-contain mix-blend-screen cursor-pointer">
             
-            <div class="flex-1 relative h-full">
-                <video src="assets/design_routine.mp4" autoplay loop muted playsinline class="w-full h-full object-contain md:object-cover mix-blend-screen"></video>
+            <div class="w-[32%] relative flex justify-center items-center">
+                <video src="assets/design_routine.mp4" autoplay loop muted playsinline class="w-full aspect-square object-cover mix-blend-screen"></video>
             </div>
 
-            <img src="assets/design_skull.png" alt="Smoke Skull Logo" class="zoomable-image h-full w-auto shrink-0 object-cover mix-blend-screen cursor-pointer">
+            <img src="assets/design_skull.png" alt="Smoke Skull Logo" class="zoomable-image w-[32%] shrink-0 aspect-square object-contain mix-blend-screen cursor-pointer">
         </div>
 
         <div class="w-full flex justify-center mb-6 md:mb-8 px-0 md:px-4">
@@ -262,7 +262,6 @@
     </div>
 
     <script>
-        // Функция переключения аватара
         function toggleAvatar() {
             const img = document.getElementById('avatar-img');
             if (img.src.includes('avatar.png')) {
@@ -272,7 +271,6 @@
             }
         }
 
-        // Функция переключения главного фото в галерее
         function changeMainPhoto(newSrc) {
             const mainPhoto = document.getElementById('main-photo');
             
@@ -284,7 +282,6 @@
             }, 200);
         }
 
-        // Функционал Лайтбокса
         const lightbox = document.getElementById('lightbox');
         const lightboxImg = document.getElementById('lightbox-img');
         
@@ -315,7 +312,6 @@
             }, 300);
         });
 
-        // ЗАЩИТА КОНТЕНТА
         document.addEventListener('contextmenu', event => event.preventDefault());
 
         document.addEventListener('dragstart', event => {
