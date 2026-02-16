@@ -1,17 +1,75 @@
-<div class="max-w-[850px] mx-auto px-6">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Danylo - Portfolio</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #050505;
+            color: #ffffff;
+            position: relative;
+        }
+        
+        /* Стили для разделителей секций */
+        .section-divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            color: #ffffff;
+            font-size: 0.75rem;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            margin: 4rem 0 2rem 0;
+            font-weight: 600;
+        }
+        .section-divider::before, .section-divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+        }
+        .section-divider::before {
+            margin-right: 1.5rem;
+            background: linear-gradient(to right, transparent, rgba(255,255,255,0.3));
+        }
+        .section-divider::after {
+            margin-left: 1.5rem;
+            background: linear-gradient(to left, transparent, rgba(255,255,255,0.3));
+        }
 
-        <div class="flex flex-col md:flex-row gap-8 md:gap-10 items-center md:items-start">
+        /* Скрытие ползунка скролла для одежды */
+        .hide-scrollbar::-webkit-scrollbar {
+            display: none;
+        }
+        .hide-scrollbar {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+    </style>
+</head>
+<body class="antialiased py-12">
+
+    <div class="absolute top-0 left-0 w-full h-[110vh] z-[-1] pointer-events-none" style="background-image: url('assets/bg1.png'); background-size: cover; background-position: center top; background-repeat: no-repeat;">
+        <div class="absolute inset-0 bg-gradient-to-b from-transparent via-[#050505]/40 to-[#050505]"></div>
+    </div>
+
+    <div class="max-w-[850px] mx-auto px-6">
+
+        <div class="flex flex-col md:flex-row gap-10 items-start">
             
-            <div class="w-64 md:w-5/12 shrink-0 relative mx-auto md:mx-0">
+            <div class="w-full md:w-5/12 shrink-0 relative">
                 <img id="avatar-img" src="assets/avatar.png" alt="Danylo" onclick="toggleAvatar()" class="w-full rounded-[2rem] object-cover shadow-2xl brightness-90 cursor-pointer transition-opacity duration-300 hover:opacity-90">
             </div>
 
-            <div class="w-full md:w-7/12 flex flex-col pt-2 items-center md:items-start text-center md:text-left">
+            <div class="w-full md:w-7/12 flex flex-col pt-2">
                 
-                <div class="flex flex-col md:flex-row gap-6 md:gap-0 justify-between items-center md:items-start w-full mb-6 md:mb-4">
-                    <div class="flex flex-col items-center md:items-start">
+                <div class="flex justify-between items-start mb-4">
+                    <div>
                         <h1 class="text-[1.75rem] leading-none font-semibold text-white">Danylo</h1>
-                        <div class="flex items-center gap-2 mt-3 md:mt-2">
+                        <div class="flex items-center gap-2 mt-2">
                             <span class="w-2.5 h-2.5 rounded-full bg-green-500 shadow-[0_0_8px_rgba(34,197,94,0.6)]"></span>
                             <span class="text-xs text-gray-300">online</span>
                         </div>
@@ -23,39 +81,247 @@
                     </a>
                 </div>
 
-                <p class="text-gray-300 text-sm leading-relaxed mb-8 md:mb-6 pr-0 md:pr-4">
+                <p class="text-gray-300 text-sm leading-relaxed mb-6 pr-4">
                     Graphic designer & multidisciplinary artist based in Berlin.<br>
                     Founder of EMFINUM.<br>
                     Focused on branding, fashion, photography, and web.
                 </p>
 
-                <div class="flex flex-col gap-4 w-full items-center md:items-start">
+                <div class="flex flex-col gap-4">
                     <h2 class="text-white text-base font-semibold mb-1">Skills</h2>
                     
-                    <div class="flex flex-col gap-1 text-sm w-full max-w-[300px] md:max-w-none">
+                    <div class="flex flex-col gap-1 text-sm">
                         <div class="text-gray-100 font-medium">Design</div>
                         <div class="text-gray-400">graphic, clothing, AI, media</div>
-                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 via-white/30 to-transparent md:from-white/30 md:to-transparent mt-1"></div>
+                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 to-transparent mt-1"></div>
                     </div>
                     
-                    <div class="flex flex-col gap-1 text-sm w-full max-w-[300px] md:max-w-none">
+                    <div class="flex flex-col gap-1 text-sm">
                         <div class="text-gray-100 font-medium">Production management</div>
                         <div class="text-gray-400">clothing, printing, jewelry</div>
-                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 via-white/30 to-transparent md:from-white/30 md:to-transparent mt-1"></div>
+                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 to-transparent mt-1"></div>
                     </div>
                     
-                    <div class="flex flex-col gap-1 text-sm w-full max-w-[300px] md:max-w-none">
+                    <div class="flex flex-col gap-1 text-sm">
                         <div class="text-gray-100 font-medium">Photography</div>
                         <div class="text-gray-400">brand shoot, retouch, product/catalogue</div>
-                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 via-white/30 to-transparent md:from-white/30 md:to-transparent mt-1"></div>
+                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 to-transparent mt-1"></div>
                     </div>
                     
-                    <div class="flex flex-col gap-1 text-sm w-full max-w-[300px] md:max-w-none">
+                    <div class="flex flex-col gap-1 text-sm">
                         <div class="text-gray-100 font-medium">Web</div>
                         <div class="text-gray-400">developing Shopify store</div>
-                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 via-white/30 to-transparent md:from-white/30 md:to-transparent mt-1"></div>
+                        <div class="h-[1px] w-full bg-gradient-to-r from-white/30 to-transparent mt-1"></div>
                     </div>
                 </div>
 
             </div>
         </div>
+
+        <div class="section-divider">EMFINUM</div>
+        <div class="flex flex-col md:flex-row gap-6 items-center">
+            <img src="assets/emfinum.png" alt="EMFINUM Logo" class="w-28 h-28 shrink-0 rounded-[1.5rem] object-cover shadow-lg border border-white/5">
+            <p class="text-gray-300 text-sm leading-relaxed">
+                Founded EMFINUM clothing brand in 2023 in Kyiv, Ukraine.<br>
+                Leading the brand as creative director — from concept and product design to drops, visual identity, and communication strategy.
+            </p>
+        </div>
+
+        <div class="section-divider">GRAPHIC DESIGN</div>
+        <p class="text-gray-300 text-sm leading-relaxed mb-8">
+            Working in graphic design since 2019, with a focus on logos, print graphics, and posters.<br>
+            Previously worked with MISBHV, DOOM3K, Era Worldwide Club, Volchok.
+        </p>
+        
+        <div class="grid grid-cols-3 gap-8 place-items-center mb-10">
+            <img src="assets/design_heart.png" alt="Heart Logo" class="zoomable-image w-full aspect-square object-contain mix-blend-screen cursor-pointer">
+            <img src="assets/design_alien-logo.png" alt="Alien Logo" class="zoomable-image w-full aspect-square object-contain mix-blend-screen cursor-pointer">
+            <img src="assets/design_fs.png" alt="FS Logo" class="zoomable-image w-full aspect-square object-contain mix-blend-screen cursor-pointer">
+        </div>
+
+        <div class="flex h-56 items-center gap-8 mb-10">
+            <img src="assets/design_death.png" alt="Skulls Logo" class="zoomable-image h-full w-auto shrink-0 object-cover mix-blend-screen cursor-pointer">
+            
+            <div class="flex-1 relative h-full">
+                <video src="assets/design_routine.mp4" autoplay loop muted playsinline class="w-full h-full object-cover mix-blend-screen"></video>
+            </div>
+
+            <img src="assets/design_skull.png" alt="Smoke Skull Logo" class="zoomable-image h-full w-auto shrink-0 object-cover mix-blend-screen cursor-pointer">
+        </div>
+
+        <div class="w-full flex justify-center mb-8 px-4">
+            <img src="assets/design_sanctuary.png" alt="Sanctuary" class="zoomable-image w-full object-contain mix-blend-screen cursor-pointer">
+        </div>
+
+        <div class="section-divider">Clothing & Jewelry design (+ product photo)</div>
+        <div class="flex md:grid md:grid-cols-4 gap-3 overflow-x-auto hide-scrollbar pb-4 md:pb-0">
+            <img src="assets/clothes_flared jeans.png" alt="Flared Jeans" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes_armor zip.png" alt="Armor Zip" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes_turtleneck.png" alt="Turtleneck" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes_raw zip.png" alt="Raw Zip" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes-hair-tool.png" alt="Hair Tool" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes-bracelet.png" alt="Bracelet" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes-ring.png" alt="Ring" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+            <img src="assets/clothes-flux-chain.png" alt="Chain" class="zoomable-image w-32 md:w-full rounded-xl object-cover shrink-0 cursor-pointer">
+        </div>
+
+        <div class="section-divider">Fonts</div>
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
+            <img src="assets/fonts_SYSTEM.png" alt="System Font" class="zoomable-image w-full rounded-xl cursor-pointer">
+            <img src="assets/fonts_exphany.png" alt="Exphany Font" class="zoomable-image w-full rounded-xl cursor-pointer">
+            <img src="assets/fonts_MENOVY.png" alt="Menovy Font" class="zoomable-image w-full rounded-xl cursor-pointer">
+            <img src="assets/fonts_FURTUMN.png" alt="Furtumn Font" class="zoomable-image w-full rounded-xl cursor-pointer">
+        </div>
+
+        <div class="flex justify-center mt-12 mb-8">
+            <a href="https://typecrips.gumroad.com/" target="_blank" class="text-white text-[0.75rem] tracking-[0.15em] uppercase font-semibold hover:text-gray-400 transition-colors">
+                Look & Buy fonts
+            </a>
+        </div>
+
+        <div class="section-divider">PHOTOGRAPHY</div>
+        <div class="flex flex-row gap-2 h-[350px] md:h-[450px]">
+            
+            <div class="flex flex-col gap-2 w-12 md:w-20 shrink-0">
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_1.jpg')">
+                    <img src="assets/photo_1.jpg" alt="Thumb 1" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_2.jpg')">
+                    <img src="assets/photo_2.jpg" alt="Thumb 2" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_3.jpg')">
+                    <img src="assets/photo_3.jpg" alt="Thumb 3" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_4.jpg')">
+                    <img src="assets/photo_4.jpg" alt="Thumb 4" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_5.jpg')">
+                    <img src="assets/photo_5.jpg" alt="Thumb 5" class="w-full h-full object-cover">
+                </div>
+                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_6.jpg')">
+                    <img src="assets/photo_6.jpg" alt="Thumb 6" class="w-full h-full object-cover">
+                </div>
+            </div>
+            
+            <div class="flex-1 rounded-sm border border-white/10 overflow-hidden bg-[#0a0a0a]">
+                <img id="main-photo" src="assets/photo_1.jpg" alt="Main Photography" class="zoomable-image w-full h-full object-contain cursor-pointer transition-opacity duration-200">
+            </div>
+
+        </div>
+
+        <div class="section-divider">WEB</div>
+        <div class="flex flex-col gap-6">
+            
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-52 shrink-0">
+                    <a href="https://emfinum.com" target="_blank" class="block hover:opacity-80 transition-opacity">
+                        <img src="assets/Asset 2.png" alt="emfinum.com" class="h-9 w-auto object-contain">
+                    </a>
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Full-cycle website development — from concept and visual design to payment system integration, logistics automation, and streamlined customer request handling.
+                </p>
+            </div>
+
+            <div class="w-full h-[1px] bg-white/10 my-1"></div>
+
+            <div class="flex flex-col md:flex-row gap-6 items-center">
+                <div class="w-full md:w-52 shrink-0">
+                    <a href="https://maderoutine.com" target="_blank" class="block hover:opacity-80 transition-opacity">
+                        <img src="assets/Asset 1.png" alt="maderoutine.com" class="h-9 w-auto object-contain">
+                    </a>
+                </div>
+                <p class="text-sm text-gray-300 leading-relaxed">
+                    Product setup and organization — including product listings, photography, and descriptions. Logistics automation with shipping service integration.
+                </p>
+            </div>
+            
+        </div>
+
+        <div class="mt-24 mb-10 pt-8 border-t border-white/10 flex flex-col md:flex-row justify-between items-center text-xs text-gray-500 gap-4">
+            <div class="flex gap-6">
+                <a href="https://instagram.com/nhflns" target="_blank" class="hover:text-white transition-colors">Instagram</a>
+                <a href="https://www.behance.net/typecrips" target="_blank" class="hover:text-white transition-colors">Behance</a>
+                <a href="mailto:typecrips@gmail.com" class="hover:text-white transition-colors">E-mail</a>
+            </div>
+            <div>© 2026</div>
+            <div>Designed & developed by me</div>
+        </div>
+
+    </div>
+
+    <div id="lightbox" class="fixed inset-0 z-[9999] hidden bg-black/90 justify-center items-center p-4 cursor-pointer backdrop-blur-sm transition-all duration-300 opacity-0">
+        <img id="lightbox-img" src="" alt="Enlarged view" class="max-w-full max-h-[90vh] object-contain rounded-lg cursor-default shadow-2xl scale-95 transition-transform duration-300 mx-auto">
+    </div>
+
+    <script>
+        // Функция переключения аватара
+        function toggleAvatar() {
+            const img = document.getElementById('avatar-img');
+            if (img.src.includes('avatar.png')) {
+                img.src = 'assets/avatar2.png';
+            } else {
+                img.src = 'assets/avatar.png';
+            }
+        }
+
+        // Функция переключения главного фото в галерее
+        function changeMainPhoto(newSrc) {
+            const mainPhoto = document.getElementById('main-photo');
+            
+            // Плавное затухание
+            mainPhoto.style.opacity = '0';
+            
+            setTimeout(() => {
+                mainPhoto.src = newSrc;
+                // Плавное появление после смены картинки
+                mainPhoto.style.opacity = '1';
+            }, 200);
+        }
+
+        // Функционал Лайтбокса (Увеличение изображений)
+        const lightbox = document.getElementById('lightbox');
+        const lightboxImg = document.getElementById('lightbox-img');
+        
+        // Используем делегирование событий для обработки динамических картинок
+        document.body.addEventListener('click', (e) => {
+            if (e.target.classList.contains('zoomable-image')) {
+                e.stopPropagation();
+                lightboxImg.src = e.target.src;
+                
+                lightbox.classList.remove('hidden');
+                lightbox.classList.add('flex');
+                
+                setTimeout(() => {
+                    lightbox.classList.remove('opacity-0');
+                    lightboxImg.classList.remove('scale-95');
+                }, 10);
+                document.body.style.overflow = 'hidden';
+            }
+        });
+
+        // Закрытие лайтбокса при клике на фон
+        lightbox.addEventListener('click', () => {
+            lightbox.classList.add('opacity-0');
+            lightboxImg.classList.add('scale-95');
+            
+            setTimeout(() => {
+                lightbox.classList.add('hidden');
+                lightbox.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300);
+        });
+
+        // ЗАЩИТА КОНТЕНТА: Отключение правого клика (контекстного меню)
+        document.addEventListener('contextmenu', event => event.preventDefault());
+
+        // ЗАЩИТА КОНТЕНТА: Отключение перетаскивания картинок
+        document.addEventListener('dragstart', event => {
+            if (event.target.tagName === 'IMG') {
+                event.preventDefault();
+            }
+        });
+    </script>
+
+</body>
+</html>
