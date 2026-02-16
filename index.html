@@ -187,31 +187,33 @@
         </div>
 
         <div class="section-divider">PHOTOGRAPHY</div>
-        <div class="flex flex-row gap-1.5 md:gap-2 h-[260px] md:h-[450px]">
+        
+        <div class="rounded-2xl p-3 md:p-4 bg-gradient-to-b from-[#454545] via-[#262626] to-[#111111] border-[3px] border-[#3a3a3a] shadow-[inset_0_2px_1px_rgba(255,255,255,0.3),0_20px_50px_-10px_rgba(0,0,0,0.9)] flex flex-row gap-3 md:gap-4 h-[280px] md:h-[480px] box-content">
             
-            <div class="flex flex-col gap-1.5 md:gap-2 w-16 md:w-20 shrink-0">
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_1.webp')">
-                    <img src="assets/photo_1.webp" alt="Thumb 1" class="w-full h-full object-cover pointer-events-none">
+            <div class="flex flex-col gap-2 w-16 md:w-20 shrink-0 py-1 pl-1">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_1.webp')">
+                    <img src="assets/photo_1.webp" alt="Thumb 1" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_2.webp')">
-                    <img src="assets/photo_2.webp" alt="Thumb 2" class="w-full h-full object-cover pointer-events-none">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_2.webp')">
+                    <img src="assets/photo_2.webp" alt="Thumb 2" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_3.webp')">
-                    <img src="assets/photo_3.webp" alt="Thumb 3" class="w-full h-full object-cover pointer-events-none">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_3.webp')">
+                    <img src="assets/photo_3.webp" alt="Thumb 3" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_4.webp')">
-                    <img src="assets/photo_4.webp" alt="Thumb 4" class="w-full h-full object-cover pointer-events-none">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_4.webp')">
+                    <img src="assets/photo_4.webp" alt="Thumb 4" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_5.webp')">
-                    <img src="assets/photo_5.webp" alt="Thumb 5" class="w-full h-full object-cover pointer-events-none">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_5.webp')">
+                    <img src="assets/photo_5.webp" alt="Thumb 5" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
-                <div class="flex-1 overflow-hidden rounded-sm border border-white/10 cursor-pointer hover:opacity-70 transition-opacity" onclick="changeMainPhoto('assets/photo_6.webp')">
-                    <img src="assets/photo_6.webp" alt="Thumb 6" class="w-full h-full object-cover pointer-events-none">
+                <div class="flex-1 overflow-hidden rounded-md border-2 border-[#222] shadow-[inset_0_1px_0_rgba(255,255,255,0.15)] bg-[#151515] cursor-pointer hover:brightness-125 transition-all group" onclick="changeMainPhoto('assets/photo_6.webp')">
+                    <img src="assets/photo_6.webp" alt="Thumb 6" class="w-full h-full object-cover pointer-events-none opacity-70 group-hover:opacity-100 transition-opacity">
                 </div>
             </div>
             
-            <div class="flex-1 rounded-sm border border-white/10 overflow-hidden bg-[#0a0a0a]">
-                <img id="main-photo" src="assets/photo_1.webp" alt="Main Photography" class="zoomable-image w-full h-full object-contain cursor-pointer transition-opacity duration-200">
+            <div class="flex-1 rounded-lg border-4 border-[#1a1a1a] shadow-[inset_0_5px_15px_rgba(0,0,0,1)] overflow-hidden bg-[#050505] relative">
+                <img id="main-photo" src="assets/photo_1.webp" alt="Main Photography" class="zoomable-image w-full h-full object-contain cursor-pointer transition-opacity duration-200 relative z-10">
+                <div class="absolute inset-0 bg-gradient-to-tr from-transparent via-white/5 to-transparent pointer-events-none z-20"></div>
             </div>
 
         </div>
